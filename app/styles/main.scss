@@ -63,10 +63,17 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
       margin-right: 0px;
       margin-top: 10px;
       color: rgb(153,153,153);
+
+
+      .description {
+        width: 188px;
+        overflow: hidden;
+        }
   }
+  
 
 .three-btn {
-  margin-top: -4px;
+  margin-top: -29px;
 }
 
 

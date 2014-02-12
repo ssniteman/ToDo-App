@@ -19,6 +19,8 @@ var todoList = [
 
 var todoTemplate = _.template($('.todo-template').text())
 
+// Adding pre objects to DOM
+
 _.each(todoList, function(items){
   $('.todo-items').prepend(todoTemplate(items));
 })
@@ -38,13 +40,32 @@ $('.js-btn').click(function(){
 var renderedTemplate = todoTemplate(todo);
 
 $('.todo-items').prepend(renderedTemplate)
+
+// Add to the array
+
+
+
+
 })
 
 // Remove button
 
 $('.todo-items').on('click', '.removebtn', function(){
 	
+var parentId = $(this).parents('.todo-item').attr('id');
+
+	console.log(parentId)
+
 	
+
+	todoList = _.reject(todoList, function(item){
+
+	return item.id == parentId;
+
+	})
+
+	console.log(todoList)
+
 
 	$(this).parents('.todo-item').remove(); 
 
@@ -53,10 +74,3 @@ $('.todo-items').on('click', '.removebtn', function(){
 
 
 
-
-
-// var parentId = $(this).parent().attr('id').split('-')[1];
-
-// 	todoList = _.reject(todoList, function(item){ 
-//       return item.id == parentId;
-//     })
