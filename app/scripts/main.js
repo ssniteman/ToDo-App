@@ -39,12 +39,15 @@ $('.js-btn').click(function(){
 
 var renderedTemplate = todoTemplate(todo);
 
+console.log(todoTemplate(todo))
+
 $('.todo-items').prepend(renderedTemplate)
 
 // Add to the array
 
+todoList.push(todo);
 
-
+console.log("New Todo List", todoList)
 
 })
 
