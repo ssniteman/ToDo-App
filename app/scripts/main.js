@@ -2,17 +2,17 @@ var todoList = [
 {
 	userinput: 'Drink Wine',
 	done: false,
-	id: _.uniqueId()
+	id: _.uniqueId('todo')
 },
 {
 	userinput: 'Wash Shits',
 	done: false,
-	id: _.uniqueId()
+	id: _.uniqueId('todo')
 },
 {
 	userinput: 'Go To Da Bitch',
 	done: false,
-	id: _.uniqueId()
+	id: _.uniqueId('todo')
 }
 ]
 
@@ -32,7 +32,7 @@ $('.js-btn').click(function(){
 	var todo = {
 	  userinput: userinput,
 	  done: false,
-	  id: _.uniqueId(),
+	  id: _.uniqueId('todo'),
 	}
 
 var renderedTemplate = todoTemplate(todo);
@@ -42,13 +42,21 @@ $('.todo-items').prepend(renderedTemplate)
 
 // Remove button
 
-$('.todo-items').on('click', ".removebtn", function(){
+$('.todo-items').on('click', '.removebtn', function(){
+	
+	
 
-var 
-
-}
-
-
+	$(this).parents('.todo-item').remove(); 
 
 
+})
 
+
+
+
+
+// var parentId = $(this).parent().attr('id').split('-')[1];
+
+// 	todoList = _.reject(todoList, function(item){ 
+//       return item.id == parentId;
+//     })
