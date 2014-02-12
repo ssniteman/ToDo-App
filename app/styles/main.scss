@@ -38,7 +38,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   display: inline-block;
 }
 
-.btn {
+.addbtn {
     display: inline-block;
     background-color: #428bca;
     width: 50px;
@@ -50,6 +50,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 .todo-items {
    width: 342px;
+    padding-bottom: 12px;
 }
 
   .todo-item {
@@ -64,7 +65,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
       color: rgb(153,153,153);
   }
 
-
+.three-btn {
+  margin-top: -4px;
+}
 
 
 
