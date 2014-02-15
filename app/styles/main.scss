@@ -50,7 +50,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 .todo-items {
    width: 342px;
-    padding-bottom: 12px;
+  padding-bottom: 12px;
 }
 
   .todo-item {
@@ -69,13 +69,36 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
         width: 188px;
         overflow: hidden;
         }
+
+      &.done {
+        text-decoration: line-through;
+      }
   }
   
+.tracker {
+  margin-top: 15px;
+  width: 50px;
+}
 
 .three-btn {
   margin-top: -29px;
 }
 
+.edit-input {
+  width: 185px;
+  position: absolute;
+  display: none;
+  z-index: 4;
+  margin-top: -3px;
+
+  &.edit-appear {
+    width: 185px;
+    position: absolute;
+    z-index: 4;
+    margin-top: -3px;
+  }
+
+}
 
 
 

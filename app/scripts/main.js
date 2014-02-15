@@ -19,6 +19,7 @@ var todoList = [
 
 var todoTemplate = _.template($('.todo-template').text())
 
+
 // Adding pre objects to DOM
 
 _.each(todoList, function(items){
@@ -48,14 +49,21 @@ $('.todo-items').prepend(renderedTemplate)
 todoList.push(todo);
 
 console.log("New Todo List", todoList)
+ 
++todoList.length;
+$('.num').text(todoList.length);
 
-})
+
+});
+
+
+
 
 // Remove button
 
 $('.todo-items').on('click', '.removebtn', function(){
 	
-var parentId = $(this).parents('.todo-item').attr('id');
+	var parentId = $(this).parents('.todo-item').attr('id');
 
 	console.log(parentId)
 
@@ -72,8 +80,68 @@ var parentId = $(this).parents('.todo-item').attr('id');
 
 	$(this).parents('.todo-item').remove(); 
 
+	-todoList.length;
+	$('.num').text(todoList.length);
+
 
 })
+
+// Complete button
+
+// $('.todo-items').on('click', '.completebtn', function(){
+
+// 	$(this).parents('.description').toggleClass('.done');
+
+// });
+
+
+r
+
+
+
+
+// Edit button
+
+
+
+$('.todo-items').on('click', '.edit-btn', function(){
+
+console.log("edit button clicked")
+
+$(this).siblings('.edit-input').show();
+
+
+});
+
+
+
+
+
+// $('.js-todo-items').on('blur', '.edit-input', function(){
+// var parentId = $(this).parents('.todo-item').attr('id');
+// var newDescription = $(this).val();
+// var item = _.findWhere(todoArray, {id: parentId});
+
+// item.description = newDescription
+
+// $(this).siblings('.userinput').empty().html(newDescription)
+// $(this).hide()
+// });
+
+
+
+
+
+// Hacking edit button
+
+$('.todo-items').on('click', '.edit-btn', function(){
+
+	$('edit-input').addClass('.edit-appear')
+
+
+});
+
+
 
 
 
