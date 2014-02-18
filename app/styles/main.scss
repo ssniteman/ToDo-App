@@ -87,8 +87,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 .edit-input {
   width: 185px;
   position: absolute;
-  display: none;
   z-index: 4;
+  display: none;
   margin-top: -3px;
 
   &.edit-appear {
@@ -105,6 +105,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     /* Remove the padding we set earlier */
     .header,
     .footer {
+        text-align: center;
+        margin-top: 50px;
         padding-left: 0;
         padding-right: 0;
     }

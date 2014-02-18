@@ -95,7 +95,6 @@ $('.todo-items').on('click', '.removebtn', function(){
 // });
 
 
-r
 
 
 
@@ -104,11 +103,11 @@ r
 
 
 
-$('.todo-items').on('click', '.edit-btn', function(){
+$('.todo-items').on('click', '.editbtn', function(){
 
 console.log("edit button clicked")
 
-$(this).siblings('.edit-input').show();
+$(this).parent().siblings('.edit-input').show();
 
 
 });
