@@ -149,33 +149,32 @@ $(this).parent().siblings('.edit-input').show();
 
 });
 
+// Different way of doing edit btn
+
+$('.todo-items').on('click', '.editbtn',function() {
+
+		var parentId = $(this).parent('.todo-item').attr('id');
+
+		var items = _.findWhere(todoList, {id: parentId});
 
 
 
+		var inputbox = "<input type='text'  class='inputbox' placeholder='type update here' value=\""+$(this).text()+"\">";
 
-// $('.js-todo-items').on('blur', '.edit-input', function(){
-// var parentId = $(this).parents('.todo-item').attr('id');
-// var newDescription = $(this).val();
-// var item = _.findWhere(todoArray, {id: parentId});
+		$(this).siblings('.task-text').html(inputbox);
 
-// item.description = newDescription
+		$("input.inputbox").focus();
 
-// $(this).siblings('.userinput').empty().html(newDescription)
-// $(this).hide()
-// });
+		$("input.inputbox").blur(function(){
+			$(this).siblings().text($('.inputbox').val());
 
+			console.log(items)
 
+		})	
 
-
-
-// Hacking edit button
-
-// $('.todo-items').on('click', '.edit-btn', function(){
-
-// 	$('edit-input').addClass('.edit-appear')
+	})
 
 
-// });
 
 
 

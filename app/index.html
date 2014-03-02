@@ -62,7 +62,7 @@
         </div>
 
         <script type="text/template" class="todo-template">
-            <div class="todo-item" id="<%= id %>">
+            <div class="todo-item <%= id %>" id="<%= id %>">
                 <input class="edit-input" placeholder="<%=userinput%>">
                 <div class="description"><%=userinput%></div>
                 <div class="btn-group three-btn pull-right">
@@ -70,6 +70,7 @@
                   <button type="button" class="btn btn-default editbtn"><span class="glyphicon glyphicon-pencil"></span></button>
                   <button type="button" class="btn btn-default removebtn"><span class="glyphicon glyphicon-remove"></span></button>
                 </div>
+                <input class="edit" type="text" value="<%- description %>" />
             </div>
         </script>
         
