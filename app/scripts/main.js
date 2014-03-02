@@ -14,10 +14,10 @@ var todoList = [
 	done: false,
 	id: _.uniqueId('todo')
 }
-]
+];
 
 
-var todoTemplate = _.template($('.todo-template').text())
+var todoTemplate = _.template($('.todo-template').text());
 
 
 // Adding pre objects to DOM
@@ -84,7 +84,7 @@ $('.todo-items').on('click', '.removebtn', function(){
 	$('.num').text(todoList.length);
 
 
-})
+});
 
 // Complete button
 
@@ -93,6 +93,43 @@ $('.todo-items').on('click', '.removebtn', function(){
 // 	$(this).parents('.description').toggleClass('.done');
 
 // });
+
+//  $('.todo-items').on('click','.completebtn', function(){
+//     $(this).parent().toggleClass('complete-item');
+
+//     var parentId = $(this).parent().attr('id').split('-')[1];
+    
+//     _.each(todoList, function(item,index){
+//       if(item.id == parentId) {
+//         item.done = true;
+//       }
+//     });
+// });
+
+
+// completed task code
+
+	$('.todo-items').on('click', '.completebtn', function(){
+
+		$(this).parent().siblings('.description').toggleClass('completed');
+
+		console.log('completed occurred')
+		
+
+		// var parentId = $(this).parent('.new-task-item').attr('id');
+
+		// var items = _.findWhere(taskList, {id: parentId});
+
+
+		// items.done =!items.done;
+
+		// changeDone = items.done;
+
+		// $(this).siblings().removeClass('false','true')
+		// $(this).siblings().addClass(changeDone.toString())
+
+		// console.log(taskList)
+	});
 
 
 
@@ -133,12 +170,12 @@ $(this).parent().siblings('.edit-input').show();
 
 // Hacking edit button
 
-$('.todo-items').on('click', '.edit-btn', function(){
+// $('.todo-items').on('click', '.edit-btn', function(){
 
-	$('edit-input').addClass('.edit-appear')
+// 	$('edit-input').addClass('.edit-appear')
 
 
-});
+// });
 
 
 

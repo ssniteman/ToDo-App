@@ -70,9 +70,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
         overflow: hidden;
         }
 
-      &.done {
-        text-decoration: line-through;
-      }
+  }
+
+  .completed .description   {
+    text-decoration: line-through;
   }
   
 .tracker {
