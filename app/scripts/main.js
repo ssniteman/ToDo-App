@@ -142,37 +142,59 @@ $('.todo-items').on('click', '.removebtn', function(){
 
 $('.todo-items').on('click', '.editbtn', function(){
 
-console.log("edit button clicked")
+	console.log("edit button clicked")
 
-$(this).parent().siblings('.edit-input').show();
+	$(this).parent().siblings('.edit-input').show();
+
+	$(this).parent().siblings('.edit-input').focus();
 
 
 });
 
+$('.todo-items').on('blur', '.edit-input', function(){
+    
+    var parentId = $(this).parent().attr('id');
+    
+    var newDescription = $(this).val();
+	
+	var item = _.findWhere(todoList, {id: parentId});
+
+	item.userinput = newDescription 
+
+	$(this).siblings('.description').empty().html(newDescription)
+	
+	$(this).hide()
+
+});
+
+
+
+
+
 // Different way of doing edit btn
 
-$('.todo-items').on('click', '.editbtn',function() {
+// $('.todo-items').on('click', '.editbtn',function() {
 
-		var parentId = $(this).parent('.todo-item').attr('id');
+// 		var parentId = $(this).parent('.todo-item').attr('id');
 
-		var items = _.findWhere(todoList, {id: parentId});
+// 		var items = _.findWhere(todoList, {id: parentId});
 
 
 
-		var inputbox = "<input type='text'  class='inputbox' placeholder='type update here' value=\""+$(this).text()+"\">";
+// 		var inputbox = "<input type='text'  class='inputbox' placeholder='type update here' value=\""+$(this).text()+"\">";
 
-		$(this).siblings('.task-text').html(inputbox);
+// 		$(this).parent().siblings('.description').html(inputbox);
 
-		$("input.inputbox").focus();
+// 		$("input.inputbox").focus();
 
-		$("input.inputbox").blur(function(){
-			$(this).siblings().text($('.inputbox').val());
+// 		$("input.inputbox").blur(function(){
+// 			$(this).siblings().text($('.inputbox').val());
 
-			console.log(items)
+// 			console.log(items)
 
-		})	
+// 		})	
 
-	})
+// 	})
 
 
 

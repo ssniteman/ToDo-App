@@ -72,7 +72,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
   }
 
-  .completed .description   {
+  .completed.description   {
     text-decoration: line-through;
   }
   
@@ -101,6 +101,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 }
 
+.edit .todo-item {
+     display: none;
+}
+
 
 
     /* Remove the padding we set earlier */
@@ -116,5 +120,4 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     .header {
         margin-bottom: 30px;
     }
-    
- 
+
