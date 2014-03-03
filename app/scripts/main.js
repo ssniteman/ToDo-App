@@ -50,7 +50,8 @@ todoList.push(todo);
 
 console.log("New Todo List", todoList)
  
-+todoList.length;
+ // counter tracker
+
 $('.num').text(todoList.length);
 
 
@@ -80,7 +81,8 @@ $('.todo-items').on('click', '.removebtn', function(){
 
 	$(this).parents('.todo-item').remove(); 
 
-	-todoList.length;
+// counter tracker
+
 	$('.num').text(todoList.length);
 
 
@@ -110,11 +112,35 @@ $('.todo-items').on('click', '.removebtn', function(){
 // completed task code
 
 	$('.todo-items').on('click', '.completebtn', function(){
-
+	
 		$(this).parent().siblings('.description').toggleClass('completed');
 
 		console.log('completed occurred')
+
 		
+		var parentId = $(this).parents('.todo-item').attr('id');
+		
+		console.log(parentId);
+
+
+		var item = _.findWhere(todoList, {id: parentId});
+		
+		var toggleDone = !item.done;
+
+		item.done = toggleDone;
+		
+		console.log(item.done)
+
+// counter tracker
+
+		var completedItems = _.where(todoList, {done: true}); 
+		console.log(completedItems)
+
+		$('.num-two').text(completedItems.length);
+
+		
+		// +todoList.length;
+		// $('.num-two').text(todoList.length);
 
 		// var parentId = $(this).parent('.new-task-item').attr('id');
 
@@ -157,44 +183,16 @@ $('.todo-items').on('blur', '.edit-input', function(){
     
     var newDescription = $(this).val();
 	
-	var item = _.findWhere(todoList, {id: parentId});
+		var item = _.findWhere(todoList, {id: parentId});
 
-	item.userinput = newDescription 
+		item.userinput = newDescription 
 
-	$(this).siblings('.description').empty().html(newDescription)
-	
-	$(this).hide()
+		$(this).siblings('.description').empty().html(newDescription)
+		
+		$(this).hide()
 
 });
 
-
-
-
-
-// Different way of doing edit btn
-
-// $('.todo-items').on('click', '.editbtn',function() {
-
-// 		var parentId = $(this).parent('.todo-item').attr('id');
-
-// 		var items = _.findWhere(todoList, {id: parentId});
-
-
-
-// 		var inputbox = "<input type='text'  class='inputbox' placeholder='type update here' value=\""+$(this).text()+"\">";
-
-// 		$(this).parent().siblings('.description').html(inputbox);
-
-// 		$("input.inputbox").focus();
-
-// 		$("input.inputbox").blur(function(){
-// 			$(this).siblings().text($('.inputbox').val());
-
-// 			console.log(items)
-
-// 		})	
-
-// 	})
 
 
 
